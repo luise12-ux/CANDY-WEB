@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Candy Shop</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <i class="fas fa-bars menu-icon"></i>
+      <img
+        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CANDY%20SHOP%20LOGO-3Kva2JTA8xF3Yj0iMbWId8GW0UlIZg.jpeg"
+        alt="Candy Shop Logo"
+        class="logo"
+      />
+    </div>
+    <div class="navbar-center">
+      <input type="search" placeholder="Buscar ..." class="search-input" />
+      
+    </div>
+    <div class="navbar-right">
+      <a href="Carrito\carhtml.html" class="cart-btn">
+        <i class="fas fa-shopping-cart"></i> Carrito
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2 class="hero-title">¡Bienvenido a CANDY SHOP!</h2>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="featured-products">
+    <h3>Productos Destacados</h3>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="/placeholder.svg" alt="Producto 1" class="product-image" />
+        <h4 class="product-name">Producto 1</h4>
+        <p class="product-price">$2.99</p>
+        <button class="add-to-cart-btn" onclick="addToCart(1, 'Producto 1', 2.99, '/placeholder.svg')">Añadir al carrito</button>
+      </div>
+      <div class="product-card">
+        <img src="/placeholder.svg" alt="Producto 2" class="product-image" />
+        <h4 class="product-name">Producto 2</h4>
+        <p class="product-price">$1.99</p>
+        <button class="add-to-cart-btn" onclick="addToCart(2, 'Producto 2', 1.99, '/placeholder.svg')">Añadir al carrito</button>
+      </div>
+      <div class="product-card">
+        <img src="/placeholder.svg" alt="Producto 3" class="product-image" />
+        <h4 class="product-name">Producto 3</h4>
+        <p class="product-price">$3.99</p>
+        <button class="add-to-cart-btn" onclick="addToCart(3, 'Producto 3', 3.99, '/placeholder.svg')">Añadir al carrito</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Candy Shop. Todos los derechos reservados.</p>
+  </footer>
+  
+  <script>
+    function addToCart(id, name, price, image) {
+        // Obtener el carrito actual desde localStorage o crear uno nuevo si no existe
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        // Verificar si el producto ya está en el carrito
+        const existingItem = cart.find(item => item.id === id);
+        
+        if (existingItem) {
+            // Si el producto ya existe, aumentar la cantidad
+            existingItem.quantity += 1;
+        } else {
+            // Si el producto no existe, agregarlo con cantidad 1
+            cart.push({ id, name, price, image, quantity: 1 });
+        }
+        
+        // Guardar el carrito actualizado en localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+        
+        // Opcional: Notificar al usuario que el producto ha sido añadido
+        alert(name + " añadido al carrito.");
+    }
+    </script>    
+</body>
+</html>

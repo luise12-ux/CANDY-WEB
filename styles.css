@@ -1,0 +1,177 @@
+/* Establece todo el fondo de la página en negro */
+body {
+    background-color: black;
+    color: white; /* Asegúrate de que el texto sea visible */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Si hay alguna sección específica que tenga un fondo blanco */
+  section, div {
+    background-color: black !important; /* Fuerza el fondo negro en todas las secciones */
+  }
+  
+.navbar {
+    background-color: black;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid purple;
+  }
+
+  /* Contenedor para el logo y el menú */
+.navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Estilo para el icono del menú */
+  .menu-icon {
+    font-size: 24px;
+    color: purple;
+    margin-right: 10px; /* Espacio entre el icono y el logo */
+  }
+  
+  /* Estilo para el logo */
+  .logo {
+    width: 150px;
+    height: auto;
+  }
+  
+  /* Ajustes para el campo de búsqueda */
+  .search-input {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    border: 2px solid purple;
+    color: white;
+    border-radius: 4px;
+    position: relative;
+  }
+  
+  .navbar-center {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin: 0 20px; /* Añadido margen lateral para dar espacio */
+  }
+  
+
+  /* Botón del carrito */
+  .cart-btn {
+    background-color: purple;
+    padding: 8px 16px;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .cart-btn i {
+    margin-right: 5px; /* Espacio entre el icono y el texto */
+  }
+  
+  .cart-btn:hover {
+    background-color: darkviolet;
+  }
+  
+  
+  .hero {
+    background-color: black;
+    padding: 40px;
+    text-align: center;
+    border-bottom: 2px solid purple;
+  }
+  
+  .hero-title {
+    font-size: 36px;
+    color: yellow;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .featured-products {
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .featured-products h3 {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+  }
+  
+  @media (min-width: 768px) {
+    .products-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .product-card {
+    background-color: #333;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 16px;
+    border-radius: 8px;
+  }
+  
+  .product-name {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  .product-price {
+    color: purple;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .add-to-cart-btn {
+    background-color: purple;
+    padding: 10px 16px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .add-to-cart-btn:hover {
+    background-color: darkviolet;
+  }
+  
+  .footer {
+    background-color: black;
+    padding: 16px;
+    text-align: center;
+    border-top: 2px solid purple;
+    margin-top: auto;
+    color: purple;
+  }
+  
